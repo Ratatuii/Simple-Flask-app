@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="container">
+        <!-- Display flash messages -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    </div>
+
+    <div class="container">
+        <h2>Авторизация</h2>
+    </div>
+        <div class="container">
+            <form action="/login" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Введите Email" required><br><br>
+            <div class="wrap">
+                <label for="password">Пароль:</label> <a class="forget_button" href="#">Забыли пароль?</a>
+            </div>
+            <input type="password" id="password" name="password" placeholder="Введите пароль" required><br><br>
+            <div class="button">
+                <button class="signin_button" type="submit">Войти</button>
+                <a class="register_button" href="/register">Зарегистрироваться</a>
+            </div>
+        </form>
+        </div>
+
+</div>
+
+</body>
+</html>

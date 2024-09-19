@@ -1,0 +1,220 @@
+/* Общие стили для страницы */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    display: block;
+    color: #444;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Контейнер формы */
+form {
+    background-color: #fff;
+    padding: 25px 30px;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    box-sizing: border-box;
+}
+.register_form{
+    padding: 40px 100px 80px 100px;
+    width: 700px;
+}
+
+/* Стили для полей ввода */
+input{
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+}
+
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+
+/* Ссылки */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+        padding: 20px;
+    }
+}
+.button{
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    width: 40%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.signin_button{
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    width: 40%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.signin_button:hover {
+    background-color: #0056b3;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.register_button{
+    text-align: center;
+    display: inline-block;
+    background-color: #6c757d;
+    color: white;
+    padding: 12px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.register_button:hover {
+    background-color: #b6b4b4;
+}
+.wrap{
+    display: flex;
+    justify-content: space-between;
+}
+.forget_button{
+    color: #007BFF;
+}
+.forget_button:hover{
+    color: #0056b3;
+}
+
+.dashboard_container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin: 50px auto;
+
+}
+
+.dashboard_container h2 {
+    font-size: 28px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.dashboard_container p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Основные стили для сообщения */
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: block;
+}
+
+.flashes li {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px; /* Округлые углы */
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    transition: opacity 0.5s ease-in-out; /* Плавное исчезновение */
+}
+
+/* Стиль для успешных сообщений */
+.flashes li.success {
+    background-color: #28a745; /* Зеленый */
+}
+
+/* Стиль для ошибок */
+.flashes li.error {
+    background-color: #dc3545; /* Красный */
+}
+
+/* Стиль для информационных сообщений */
+.flashes li.info {
+    background-color: #17a2b8; /* Голубой */
+}
+
+/* Стиль для предупреждений */
+.flashes li.warning {
+    background-color: #ffc107; /* Желтый */
+    color: #212529; /* Черный текст */
+}
+.container{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.button_update_profile{
+    width: 60%;
+}
+
+.m0-auto{
+    margin: 30px auto;
+}
+.red-button{
+    display: block;
+}
+
+.red-button:hover{
+    background-color: red;
+}
+.logout_button{
+    display: flex;
+    justify-content: center;
+}

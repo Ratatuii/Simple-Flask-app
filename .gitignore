@@ -2,7 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+/instance/users.db
+.idea
 # C extensions
 *.so
 

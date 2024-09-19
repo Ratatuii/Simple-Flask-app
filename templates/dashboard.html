@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+
+
+<div class="wrapper">
+    <div class="container">
+
+        <!-- Display flash messages -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    </div>
+
+    <div class="dashboard_container">
+        <h2>Добро пожаловать, {{ current_user.name }}!</h2>
+
+        <!-- Форма для изменения профиля -->
+        <div class="wrapp">
+            <form class="m0-auto" action="/update_profile" method="POST">
+
+            <label for="name">Имя:</label>
+            <input type="text" name="name" id="name" value="{{ current_user.name }}" required>
+            <label for="name">Фамилия:</label>
+            <input type="text" name="last_name" id="last_name" value="{{ current_user.last_name }}" required>
+
+            <label for="name">Email:</label>
+            <input type="email" name="email" id="email" value="{{ current_user.email }}" required>
+
+            <button class="button_update_profile" type="submit">Обновить профиль</button>
+        </form>
+
+        <!-- Форма для изменения пароля -->
+        <form class="m0-auto" action="/change_password" method="POST">
+            <label for="old_password">Старый пароль:</label>
+            <input type="password" name="old_password" id='old_password' placeholder="Старый пароль" required>
+
+            <label for="new_password">Новый пароль:</label>
+            <input type="password" name="new_password" placeholder="Новый пароль" required>
+            <button type="submit">Сменить пароль</button>
+        </form>
+
+        <!-- Кнопка удаления профиля -->
+        <form class="m0-auto" action="/delete_profile" method="POST">
+            <label for="accept_password">Введите пароль:</label>
+            <input type="password" name="accept_password" id="accept_password" placeholder="Введите пароль" required>
+
+            <button class="red-button" type="submit" id="delete_account" onclick="return confirm('Вы уверены, что хотите удалить свой профиль? Это действие нельзя отменить.')">Удалить профиль</button>
+
+
+        </form>
+        <div class="logout_button m0-auto">
+            <a class="logout" href="/logout">Выйти</a>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
